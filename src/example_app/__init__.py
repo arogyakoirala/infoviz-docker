@@ -20,7 +20,7 @@ def status():
     CLITEM = args.get('CLITEM')
     # STCODE = args.get('STCODE')
     status = os.popen(f'python /opt/app/example_app/getter.py -s {UID} -c {CLCODE} -i {CLITEM}').read()
-    os.system(f'python /opt/app/example_app/chupdummy.py {UID} {CLCODE} {CLITEM} {status}')
+    # os.system(f'python /opt/app/example_app/chupdummy.py {UID} {CLCODE} {CLITEM} {status}')
     return status
 
 @app.route('/chup', methods=['GET'])
@@ -32,6 +32,6 @@ def chup():
     CLITEM = args.get('CLITEM')
     STCODE = args.get('STCODE')
 
-    os.system(f'python /opt/app/example_app/chupdummy.py {UID} {CLCODE} {CLITEM} {STCODE}')
+    # os.system(f'python /opt/app/example_app/chupdummy.py {UID} {CLCODE} {CLITEM} {STCODE}')
     result = os.popen(f'python /opt/app/example_app/chup.py -s {UID} -c {CLCODE} -i {CLITEM} -x {STCODE}').read()
     return result
