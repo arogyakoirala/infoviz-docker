@@ -18,7 +18,7 @@ def parseArguments() :
 
 
 def go(baseUrl, studentId, checklistName, itemName, statusCode):
-    api = StudentChecklistAPI(baseUrl, "props.ini")
+    api = StudentChecklistAPI(baseUrl, "/opt/app/example_app/props.ini")
 
     # First, get the student's checklist info
     response = api.get(studentId)
