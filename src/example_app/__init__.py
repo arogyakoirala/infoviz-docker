@@ -30,6 +30,7 @@ def chup():
     CLITEM = args.get('CLITEM')
     STCODE = args.get('STCODE')
 
+    print(os.listdir())
     os.system(f'python chupdummy.py {UID} {CLCODE} {CLITEM} {STCODE}')
     result = os.popen(f'python chup.py -s {UID} -c {CLCODE} -i {CLITEM} -x {STCODE}').read()
     return result
