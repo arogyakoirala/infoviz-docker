@@ -4,6 +4,8 @@ import os
 app = Flask(__name__)
 
 
+
+
 @app.route('/')
 def hello():
     return '<h1>CALCentral Task API</h1>'
@@ -17,8 +19,8 @@ def status():
     CLCODE = args.get('CLCODE')
     CLITEM = args.get('CLITEM')
     # STCODE = args.get('STCODE')
-    status = os.popen(f'python ./getter.py -s {UID} -c {CLCODE} -i {CLITEM}').read()
-    os.system(f'python ./chupdummy.py {UID} {CLCODE} {CLITEM} {status}')
+    status = os.popen(f'python /opt/app/example_app/getter.py -s {UID} -c {CLCODE} -i {CLITEM}').read()
+    os.system(f'python /opt/app/example_app/chupdummy.py {UID} {CLCODE} {CLITEM} {status}')
     return status
 
 @app.route('/chup', methods=['GET'])
@@ -30,6 +32,6 @@ def chup():
     CLITEM = args.get('CLITEM')
     STCODE = args.get('STCODE')
 
-    os.system(f'python ./chupdummy.py {UID} {CLCODE} {CLITEM} {STCODE}')
-    result = os.popen(f'python ./chup.py -s {UID} -c {CLCODE} -i {CLITEM} -x {STCODE}').read()
+    os.system(f'python /opt/app/example_app/chupdummy.py {UID} {CLCODE} {CLITEM} {STCODE}')
+    result = os.popen(f'python /opt/app/example_app/chup.py -s {UID} -c {CLCODE} -i {CLITEM} -x {STCODE}').read()
     return result
