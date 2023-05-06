@@ -5,4 +5,4 @@ core/venv
 *.swp
 *.log
 .venv
-.env
+# .env
