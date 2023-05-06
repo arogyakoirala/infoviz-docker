@@ -110,9 +110,13 @@ def get_subset(query):
       data.append(r)
 
   return {"data": data, "native_labels": list(native_labels), "exotic_labels": list(exotic_labels)}
-  
-@app.route('/get-json')
+
+@app.route('/')
 def hello():
+  return "Hello bro"
+
+@app.route('/get-json')
+def getjson():
     args = request.args.to_dict()
     # print( get_subset(args))
     # return "success"
