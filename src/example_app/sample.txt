@@ -1,4 +1,0 @@
-uid=15182
-clcode=GDISD
-cltype=GSURV1
-stcode=I
